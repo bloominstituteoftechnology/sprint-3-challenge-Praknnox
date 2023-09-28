@@ -65,28 +65,45 @@
         return this.ints
       }
       getEvens(){
+        let evens=[]
         for(let inn in this.ints){
           if(this.ints[inn]%2===0){
-
+            evens.push(this.ints[inn])
           }
         }
+        return evens
       }
       getNegatives(){
-        return
+        let nega=[]
+        for(let inn in this.ints){
+          if(this.ints[inn]<0){
+            nega.push(this.ints[inn])
+          }
+        }
+        return nega
       }
       getAllSquared(){
-        return
+        for(let inn in this.ints){
+          this.ints[inn]=this.ints[inn]**2
+        }
+        return this.ints
       }
       pop(){
-        pop()
-        return
+        return this.ints.pop()
       }
-      push(){
-        push()
-        return
+      push(num){
+        this.ints.push(num)
+        return this.ints
+      }
+      getEveryNth(n){
+        let zoroark=[]
+        for(let i=0;i<this.ints.length;i+=n){
+          zoroark.push(this.ints[i])
+        }
+        return zoroark
       }
       getAllReversed(){
-        return
+        return this.ints.slice().reverse()
       }
     }
 
@@ -106,7 +123,7 @@
       //      * When disengaging the safety, return "Safety disabled!"
       // 🌟 HINT: instances need to keep track of their maximum capacity as well as their current capacity
         constructor(projectiles){
-          this.
+          
         }
         shoot(){
 
@@ -174,7 +191,7 @@
       // 👉 HINT: if you are not feeling confident with map and filter, solve the problem with for loops,
       //      and with the piece of mind of all tests passing, refactor to use map/filter
         constructor(name,...names){
-          this.ants=[ant{name:,health:100}]
+          //this.ants=[ant={name:"bob",health:100}]
 
         }
         work(){
