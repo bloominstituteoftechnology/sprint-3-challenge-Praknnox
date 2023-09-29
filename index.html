@@ -179,9 +179,20 @@
       // 🌟 HINT: remember about the `slice` method which strings and arrays have
       // ❗ Feel free to implement `back`, although this is not required nor graded
       constructor(book,charcount){
-
+        this.book=book
+        this.charcount=charcount
+        this.crrntpage=0
       }
-      next(){}
+      next(){
+        let page=this.crrntpage*this.charcount
+        let turner=page+this.charcount
+        if(page>=this.book.length){
+          return null
+        }
+        let text=this.book.slice(page,turner)
+        this.crrntpage++
+        return text
+      }
     }
 
     // 👉 CHALLENGE 4 AntFarm
