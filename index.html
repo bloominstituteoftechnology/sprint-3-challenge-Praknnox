@@ -229,25 +229,19 @@
       //      and with the piece of mind of all tests passing, refactor to use map/filter
         constructor(...names){    
           this.ants=names.map(name=>({name,health:100}))      
-          /*this.ants=[]
-          names.forEach(name=>{
-            if(!this.ants.some(ant=>ant.name===name)){
-              this.ants.push({name,health:100})
-            }
-          })*/
         }
         work(){
           if(this.ants.length===0){
             return "No ants here. Did you work them to death?"
           }
-          this.ants=this.ants.map(ant=>{
+          this.ants=this.ants.filter(ant=>{
             if(ant.health>0){
             ant.health-=20
-            }
-            return ant
-          }).filter(ant=>ant.health>0)
-          return `${this.ants.length} ants starting work!`
           }
+          return ant.health>0
+          })
+          return `${this.ants.length} ants starting work!`
+        }
         feed(name){
           let feedme=this.ants.filter(ant=>ant.name===name)
           if(feedme.length>0){
