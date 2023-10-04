@@ -231,7 +231,8 @@
           this.ants=names.map(name=>({name,health:100}))      
         }
         work(){
-          if(this.ants.length===0){
+          const abba=this.ants.length
+          if(abba===0){
             return "No ants here. Did you work them to death?"
           }
           this.ants=this.ants.filter(ant=>{
@@ -240,7 +241,7 @@
           }
           return ant.health>0
           })
-          return `${this.ants.length} ants starting work!`
+          return `${abba} ants starting work!`
         }
         feed(name){
           let feedme=this.ants.filter(ant=>ant.name===name)
